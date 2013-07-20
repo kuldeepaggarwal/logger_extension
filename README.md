@@ -1,6 +1,9 @@
 # LoggerExtension
 
-TODO: Write a gem description
+[![Gem Version](https://badge.fury.io/rb/logger_extension.png)](http://badge.fury.io/rb/logger_extension)
+
+LoggerExtension is a utility for logging on multiple files for rack applications.
+
 
 ## Installation
 
