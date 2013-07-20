@@ -1,6 +1,7 @@
 # LoggerExtension
 
 [![Gem Version](https://badge.fury.io/rb/logger_extension.png)](http://badge.fury.io/rb/logger_extension)
+[![Code Climate](https://codeclimate.com/github/kuldeepaggarwal/logger_extension.png)](https://codeclimate.com/github/kuldeepaggarwal/logger_extension)
 
 LoggerExtension is a utility for logging on multiple files for rack applications.
 
