@@ -1,5 +1,7 @@
+require 'forwardable'
 module LoggerExtension
   class MultiIOLogger
+    extend Forwardable
 
     class LogDeviceMutex
       include MonitorMixin
@@ -13,6 +15,9 @@ module LoggerExtension
       @default_formatter = ::LoggerExtension::Formatter.new
       @mutex = LogDeviceMutex.new
     end
+
+    def_delegator :@default_formatter, :datetime_format
+    def_delegator :@default_formatter, :datetime_format=
 
     def write(*arguments)
       @targets.each { |target|
@@ -40,14 +45,6 @@ module LoggerExtension
           target.close rescue nil
         end
       end
-    end
-
-    def datetime_format
-      default_formatter.datetime_format
-    end
-
-    def datetime_format=(format)
-      default_formatter.datetime_format = format
     end
 
     private
