@@ -11,7 +11,7 @@ module LoggerExtension
     attr_accessor :default_progname
 
     def initialize(*targets)
-      @targets = targets
+      @targets = targets.each { |target| target.sync = true if target.respond_to?(:sync=) }
       @default_formatter = ::LoggerExtension::Formatter.new
       @mutex = LogDeviceMutex.new
     end
